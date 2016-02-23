@@ -3,6 +3,6 @@ resource "aws_route53_record" "entry" {
   name = "${element(split(",", var.names), count.index)}"
   record = "${var.records}"
   ttl = "300"
-  type = "${var.type}"
+  type = ["${var.type}"]
   count = "${length(compact(split(",", var.names)))}"
 }
