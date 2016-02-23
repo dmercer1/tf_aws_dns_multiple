@@ -1,4 +1,4 @@
-resource "aws_route53_record" "dns-entry" {
+resource "aws_route53_record" "entry" {
   zone_id = "${var.zone_id}"
   name = "${element(split(",", var.names), count.index)}"
   record = "${var.records}"
