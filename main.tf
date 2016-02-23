@@ -1,5 +1,4 @@
-module "dns_entry" {
-  source = "github.com/dmercer1/tf_aws_dns"
+resource "aws_route53_record" "dns-entry" {
   zone_id = "${var.zone_id}"
   name = "${element(split(",", var.names), count.index)}"
   record = "${var.records}"
