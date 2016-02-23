@@ -1,3 +1,3 @@
 output "records" {
-  value = "${join(",", module.dns_entry.*.id)}"
+  value = "${join(",", aws_route53_record.dns_entry.*.id)}"
 }
